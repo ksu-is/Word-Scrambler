@@ -1,8 +1,11 @@
+import random
+import cPickle
+
 f = open("scrumbledDict.txt",'r')
 dic = cPickle.load(f)
 f.close()
 
-print dic
+#print dic
 
 scrumbled_word = scrumbled_word.strip()
 list2 = scrumbled_word.split(" ")

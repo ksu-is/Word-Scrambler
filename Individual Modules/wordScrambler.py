@@ -9,14 +9,14 @@ f.close()
 def __split__ (message):
 
 	message = message.strip()
-	word = message.split(" ")
+	word = message.splitlines()
 
 	f = open('scrumbled_done.txt','w')
 	for item in range(len(word)):
 		text = list(word[item])
 		random.shuffle(text)
 		shuffled_word = "".join(text)
-		print shuffled_word
+		#print shuffled_word
 
 		message = f.write(shuffled_word + " ")
 		

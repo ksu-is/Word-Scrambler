@@ -11,7 +11,7 @@ f.close()
 
 def __scram_dict__(word, scrumbled_word):
 	word = word.strip()
-	list1 = word.split(" ")
+	list1 = word.splitlines()
 
 	scrumbled_word = scrumbled_word.strip()
 	list2 = scrumbled_word.split(" ")
@@ -21,7 +21,7 @@ def __scram_dict__(word, scrumbled_word):
 	
 
 	f = open("scrumbledDict.txt", 'w')
-	dic = f.open(cPickle.dumps(dictionary))
+	dic = f.write(cPickle.dumps(dictionary))
 	f.close
 
 
