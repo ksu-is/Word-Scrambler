@@ -65,14 +65,30 @@ scrumbled_word = scrumbled_word.strip()
 list2 = scrumbled_word.split(" ")
 attempt = raw_input("How many times do you want to play? : ")
 attempt = int (attempt)
+points =0;
+
 for line in range(attempt):
 	ques = random.choice(list2) 
 	ques = ques.strip()
 	correct = dic.keys()[dic.values().index(ques)]
-	print ques
+	print "Ques no. ", line+1, ": ", ques
 	ans = raw_input("Answer: ")
 	ans = ans.strip()
+
 	if ans == correct:
-		print "Accepted!"
+		points = points+1
+		print "Accepted! and your point is: ", points
 	else:
-		print "Sorry! WA!"
+		print "Sorry! WA! and your point is: ", points
+		print "The CA was: ", correct
+
+print "Your final result is: ", points
+if points==0:
+	print "Damn, you so bad, cow!!!!!"
+elif (points/attempt)*100 <20:
+	print "Nigga have you ever gone to school?"
+elif (points/attempt)*100 <50:
+	print "Welcome to school"
+elif (points/attempt)*100 <75:
+	print "Teach the developer some english, he's so bad"
+else print "That'some shit right there, you should right your own dictionary"
