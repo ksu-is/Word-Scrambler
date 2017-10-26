@@ -82,19 +82,29 @@ for line in range(attempt):
 		print "Sorry! WA! and your point is: ", points
 		print "The CA was: ", correct
 
-print "Your final result is: ", points
+	print " "
 
-if points==0:
-	print "Damn, you so bad, cow!!!!!"
 
-elif (points/attempt)*100 <20:
+print " "
+print "Your final result is: ", points, attempt
+print " "
+
+val = float (points) /attempt
+avg = val*100
+#print avg
+
+if avg == 0:
+	print "Damn, you're so bad, cow!!!!!"
+
+elif avg < 20:
 	print "Nigga have you ever gone to school?"
 
-elif (points/attempt)*100 <50:
+elif  avg < 50:
 	print "Welcome to school"
 
-elif (points/attempt)*100 <75:
+elif avg < 75:
 	print "Teach the developer some english, he's so bad"
 
-else:
-	 print "That's some shit right there, you should right your own dictionary"
+else: 
+	print "That'some shit right there, you should write your own dictionary"
+
