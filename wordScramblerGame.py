@@ -83,12 +83,18 @@ for line in range(attempt):
 		print "The CA was: ", correct
 
 print "Your final result is: ", points
+
 if points==0:
 	print "Damn, you so bad, cow!!!!!"
+
 elif (points/attempt)*100 <20:
 	print "Nigga have you ever gone to school?"
+
 elif (points/attempt)*100 <50:
 	print "Welcome to school"
+
 elif (points/attempt)*100 <75:
 	print "Teach the developer some english, he's so bad"
-else print "That'some shit right there, you should right your own dictionary"
+
+else:
+	 print "That'some shit right there, you should right your own dictionary"
