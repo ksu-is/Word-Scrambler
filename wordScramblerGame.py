@@ -97,4 +97,4 @@ elif (points/attempt)*100 <75:
 	print "Teach the developer some english, he's so bad"
 
 else:
-	 print "That'some shit right there, you should right your own dictionary"
+	 print "That's some shit right there, you should right your own dictionary"
