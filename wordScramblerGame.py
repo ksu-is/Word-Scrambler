@@ -63,27 +63,40 @@ f.close()
 
 scrumbled_word = scrumbled_word.strip()
 list2 = scrumbled_word.split(" ")
-attempt = raw_input("How many times do you want to play? : ")
-attempt = int (attempt)
-points =0;
 
-for line in range(attempt):
+#attempt = raw_input("How many times do you want to play? : ")
+#attempt = int (attempt)
+
+points = 0
+attempt = 0
+lives = 5
+wa = 0
+line = 0
+
+while (lives != 0):
+	attempt = attempt + 1
+	line = line + 1
+
 	ques = random.choice(list2) 
 	ques = ques.strip()
+
 	correct = dic.keys()[dic.values().index(ques)]
-	print "Ques no. ", line+1, ": ", ques
+
+	print "Ques no. ", line, ": ", ques
 	ans = raw_input("Answer: ")
 	ans = ans.strip()
 
 	if ans == correct:
 		points = points+1
-		print "Accepted! and your point is: ", points
+		print "Accepted! and your point is: ", points, "Lives = ", lives 
+
 	else:
-		print "Sorry! WA! and your point is: ", points
-		print "The CA was: ", correct
-
+		wa = wa + 1 
+		if(wa % 2 == 0):
+			lives = lives - 1
+		print "Sorry! WA! and your point is: ", points, "Lives = ", lives
+		print "The CA was: ", correct  
 	print " "
-
 
 print " "
 print "Your final result is: ", points, attempt
@@ -106,5 +119,4 @@ elif avg < 75:
 	print "Teach the developer some english, he's so bad"
 
 else: 
-	print "That'some shit right there, you should write your own dictionary"
-
+	print "That's some shit right there, you should write your own dictionary"
