@@ -67,10 +67,14 @@ list2 = scrumbled_word.split(" ")
 #attempt = raw_input("How many times do you want to play? : ")
 #attempt = int (attempt)
 
+#death_words = ['You son of a b-----------------------', 'You son of a b-----------------------', 'Wha wha what the FUCK!!! are you fucking crazy?????',  'You fucking asshole! why havent u studied?', 'Hey stupid! What are u doin?', 'I am hanging, don let me die!']
+life_bar = "||||||||||"
+#print death_words[2]
+
 points = 0
 attempt = 0
-lives = 5
-wa = 0
+lives = 10
+#wa = 0
 line = 0
 
 while (lives != 0):
@@ -81,25 +85,27 @@ while (lives != 0):
 	ques = ques.strip()
 
 	correct = dic.keys()[dic.values().index(ques)]
-
+	print "Attempts left: "+life_bar[0:lives]
 	print "Ques no. ", line, ": ", ques
 	ans = raw_input("Answer: ")
 	ans = ans.strip()
 
 	if ans == correct:
 		points = points+1
-		print "Accepted! and your point is: ", points, "Lives = ", lives 
+		print "Accepted! and your point is: ", points 
 
 	else:
-		wa = wa + 1 
-		if(wa % 2 == 0):
-			lives = lives - 1
-		print "Sorry! WA! and your point is: ", points, "Lives = ", lives
+		#wa = wa + 1 
+		#if(wa % 2 == 0):
+		lives = lives - 1
+		print "Sorry! WA! and your point is: ", points
 		print "The CA was: ", correct  
 	print " "
 
 print " "
-print "Your final result is: ", points, attempt
+print "No attempts left."
+print " "
+print "Your final result is: ", points, "out of: ", attempt, "attempts."
 print " "
 
 val = float (points) /attempt
