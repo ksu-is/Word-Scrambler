@@ -1,0 +1,22 @@
+
+<PlayScreen>:
+	BoxLayout:
+		Button:
+			text: "Play"
+			size: 100, 50
+			on_press:
+				root.manager.transition.direction = "left"
+				root.manager.transition.duration = 1
+				root.manager.current = "main_screen"
+<MainScreen>:
+	BoxLayout:
+		Label:
+			text: 
+		Button:
+			text: "back"
+			size: 100, 50
+			on_press:
+				root.manager.transition.direction = "right"
+				root.manager.transition.duration = 1
+				root.manager.current = "play_screen"
+
