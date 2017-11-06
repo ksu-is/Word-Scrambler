@@ -1,0 +1,37 @@
+
+<PlayScreen>:
+	BoxLayout:
+		Button:
+			text: "Play"
+			size: 100, 50
+			on_press:
+				root.manager.transition.direction = "left"
+				root.manager.transition.duration = 1
+				root.manager.current = "main_screen"
+<MainScreen>:
+	BoxLayout: 
+		TextInput:
+			id: inp
+			focus: True
+			multiline: False
+		Label:
+			text: "Question: "
+		Label: 
+			text: app.text
+		Label:
+			text:  "Attempts Left: "
+		Label:
+			text: app.life_bar
+		Button:
+			text: "back"
+			size: 100, 50
+			on_press:
+				root.manager.transition.direction = "right"
+				root.manager.transition.duration = 1
+				root.manager.current = "play_screen"
+
+		Button:
+			text: "submit"
+			size: 50, 25
+			on_press:
+				app.submit(inp.text, app.list2, app.life_bar)
